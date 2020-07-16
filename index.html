@@ -1,7 +1,141 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="EUC-KR">
+<title>maplestory mvp helper</title>
+<style type="text/css">
+	html,body{width: 100%;height: 100%;}
+	#wrap{width: 100%;height: 100%;}
+	#header{height: 20%;}
+	#container{height: 60%;}
+	
+	.info{width: 400px;  margin: 30px; padding:5px; border: 2px solid gray;}
+	
+	label {
+		display: block;
+	}
+</style>
+<script>
+	function search(){
+		var itemName = document.getElementById("itemName").value;
+		var itemCash = parseInt(document.getElementById("itemCash").value);
+		var itemPrice = parseInt(document.getElementById("itemPrice").value);
+		var auctionFee = parseInt(document.getElementById("auctionFee").value);
+		var exchangeRate = parseInt(document.getElementById("exchangeRate").value);
+		var amount = parseInt(document.getElementById("amount").value);
+		var chargeSales = parseInt(document.getElementById("chargeSales").value);
+		var useYn = document.getElementById("useYn").value;
+		
+		var money = 0;
+		var cash = 0;
+		var item_count = 0;
+		var payback = 0;
+		var mileage = 0;
+		var count = 0;
+		var Mileage = 0;
+		var charge_amount = amount + (amount * chargeSales * 0.01);
+		
+		while(true){
+			if(useYn == "Y"){
+				money += itemPrice - (itemPrice*auctionFee*0.01);
+				if(Mileage >= itemCash*0.3){
+					cash += itemCash*0.7;
+				}else{
+					cash += itemCash;
+					Mileage += itemCash * 0.05;
+				}
+			}else{
+				money += itemPrice - (itemPrice*auctionFee*0.01);
+				cash += itemCash;
+				Mileage = itemCash * 0.05;
+			}
+			count += 1;
+			if(cash >= amount){
+				var str = "<<<<" + itemName + ">>>>" + "\n";
+				str += ;
+				str += "abc";
+				alert(str);
+				payback = money/100000000*exchangeRate;
+				break;
+			}
+		}/* while  */
+	}/* function  */
+</script>
+
+</head>
 <body>
-  <h1>Hello World</h1>
-  <p>I'm hosted with GitHub Pages.</p>
+	<div id="wrap">
+		<div id="header">
+			<div>Header</div>
+		</div>
+			
+		<div id="container">
+			<div id="infoClass">
+				<div id="itemInfo" class="info">
+					<div>
+						<span>
+							<label>Item Name</label>
+							<input type="text" id="itemName" placeholder="Item Name" class="inputBox">
+						</span>
+					</div>
+					<div>
+						<span>
+							<label>Item Cash</label>
+							<input type="text" id="itemCash" placeholder="Item Cash" class="inputBox">
+						</span>
+					</div>
+					<div>
+						<span>
+							<label>Item Price</label>
+							<input type="text" id="itemPrice" placeholder="Item Price" class="inputBox">
+						</span>
+					</div>
+					<div>
+						<label>Auction Fee</label>
+						<select id="auctionFee" class="inputBox">
+							<option value="default">선택</option>
+							<option value="3">3%</option>
+							<option value="5">5%</option>
+						</select>
+					</div>
+				</div>
+				
+				<div id="chargeInfo" class="info">
+					<div>
+						<span>
+							<label>exchange rate</label>
+							<input type="text" id="exchangeRate" placeholder="exchange rate" class="inputBox">
+						</span>
+					</div>
+					<div>
+						<span>
+							<label>mvp amount</label>
+							<input type="text" id="amount" placeholder="mvp amount" class="inputBox">
+						</span>
+					</div>
+					<div>
+						<span>
+							<label>charge sales</label>
+							<input type="text" id="chargeSales" placeholder="charge sales" class="inputBox">
+						</span>
+					</div>
+					<div>
+						<label>Mileage UseYn</label>
+						<select id="useYn" class="inputBox">
+							<option value="default">선택</option>
+							<option value="Y">Y</option>
+							<option value="N">N</option>
+						</select>
+					</div>
+					<!-- <input type="button" id="btn" value="Go" onclick="search()"> -->
+					<button id="btn" onclick="search()">Button</button>
+				</div>
+			</div>
+		</div>
+			
+		<div id="footer">
+			<div>Footer</div>
+		</div>
+	</div>
 </body>
 </html>
