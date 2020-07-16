@@ -16,6 +16,10 @@
 	}
 </style>
 <script>
+	function testAlert(){
+		alert("Test");
+	}
+
 	function search(){
 		var itemName = document.getElementById("itemName").value;
 		var itemCash = parseInt(document.getElementById("itemCash").value);
@@ -67,6 +71,7 @@
 	<div id="wrap">
 		<div id="header">
 			<div>Header</div>
+			<button id="testBtn" onclick="testAlert()"></button>
 		</div>
 			
 		<div id="container">
