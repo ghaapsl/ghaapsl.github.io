@@ -16,9 +16,6 @@
 	}
 </style>
 <script>
-	function testAlert(){
-		alert("Test");
-	}
 
 	function search(){
 		var itemName = document.getElementById("itemName").value;
@@ -55,8 +52,7 @@
 			}
 			count += 1;
 			if(cash >= amount){
-				var str = "<<<<" + itemName + ">>>>" + "\n";
-				str += ;
+				var str = "<<<<" + itemName + ">>>>";
 				str += "abc";
 				alert(str);
 				payback = money/100000000*exchangeRate;
@@ -71,7 +67,7 @@
 	<div id="wrap">
 		<div id="header">
 			<div>Header</div>
-			<button id="testBtn" onclick="testAlert()"></button>
+			<!-- <button id="testBtn" onclick="testAlert()">Test</button> -->
 		</div>
 			
 		<div id="container">
